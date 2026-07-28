@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cymalaubat SUARL — BTP & Génie Civil à Dakar, Sénégal</title>
+  <meta name="description" content="Cymalaubat SUARL (CMB) : entreprise de BTP et Génie Civil à Dakar, Sénégal. Gros œuvre, génie civil, VRD, rénovation, bureau d'études. Plus de 20 ans d'expertise au service de vos projets de construction."/>
+  <meta name="keywords" content="BTP Sénégal, génie civil Dakar, construction Sénégal, gros oeuvre Dakar, rénovation bâtiment, VRD Sénégal, Cymalaubat, CMB, bureau d'études BTP"/>
+  <meta name="author" content="Cymalaubat SUARL"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="index.html"/>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cymalaubat SUARL — BTP & Génie Civil Sénégal"/>
+  <meta property="og:description" content="Entreprise de BTP et Génie Civil à Dakar. Construction, rénovation, VRD, génie civil."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="fr_SN"/>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ConstructionBusiness",
+    "name": "Cymalaubat SUARL",
+    "alternateName": "CMB - Cyprien Manda Laurent Bâtiment",
+    "description": "Entreprise de BTP et Génie Civil à Dakar, Sénégal",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "27 Wakhinane Guédiawaye",
+      "addressLocality": "Dakar",
+      "addressCountry": "SN"
+    },
+    "telephone": ["+221775582150", "+221708353656"],
+    "email": "cymalaubat@gmail.com",
+    "url": "index.html",
+    "foundingDate": "2004",
+    "registrationNumber": "SN.DKR.2004.240"
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+
+  <style>
+    /* ── Hero Section ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--color-dark);
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/images/hero.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      transform: scale(1.05);
+      animation: heroZoom 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1.05); }
+      to   { transform: scale(1.0); }
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      padding-top: 100px;
+    }
+
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      background: rgba(232, 98, 10, 0.12);
+      border: 1px solid rgba(232, 98, 10, 0.3);
+      border-radius: var(--radius-full);
+      padding: var(--space-2) var(--space-5);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-orange-light);
+      margin-bottom: var(--space-6);
+    }
+
+    .hero__eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--color-orange);
+      border-radius: 50%;
+      animation: pulse-orange 2s ease infinite;
+    }
+
+    .hero__title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--color-white);
+      margin-bottom: var(--space-6);
+      letter-spacing: 0.02em;
+    }
+
+    .hero__title .orange { color: var(--color-orange); }
+
+    .hero__subtitle {
+      font-size: clamp(var(--text-base), 2vw, var(--text-xl));
+      color: rgba(240, 237, 232, 0.8);
+      line-height: 1.7;
+      margin-bottom: var(--space-10);
+      max-width: 580px;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-16);
+    }
+
+    .hero__stats {
+      display: flex;
+      gap: var(--space-10);
+      flex-wrap: wrap;
+    }
+
+    .hero__stat {
+      text-align: left;
+    }
+
+    .hero__stat-number {
+      font-family: var(--font-heading);
+      font-size: var(--text-4xl);
+      font-weight: 700;
+      color: var(--color-orange);
+      line-height: 1;
+      display: block;
+    }
+
+    .hero__stat-label {
+      font-size: var(--text-xs);
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Scroll cue */
+    .hero__scroll-cue {
+      position: absolute;
+      bottom: var(--space-8);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    /* ── Stats Section ── */
+    .stats-section {
+      background: var(--color-concrete);
+      border-top: 3px solid var(--color-orange);
+    }
+
+    /* ── Why Us ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-6);
+    }
+
+    /* ── Clients / Partners strip ── */
+    .partners-strip {
+      background: var(--color-dark);
+      padding: var(--space-10) 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .partners-strip p {
+      text-align: center;
+      font-size: var(--text-sm);
+      color: var(--color-concrete-light);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-6);
+    }
+
+    .partners-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--space-10);
+    }
+
+    .partner-logo {
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-concrete-light);
+      letter-spacing: 0.08em;
+      transition: color var(--transition-base);
+      padding: var(--space-2) var(--space-4);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-md);
+    }
+
+    .partner-logo:hover { color: var(--color-orange); border-color: rgba(232,98,10,0.3); }
+
+    /* ── Service Preview Strip ── */
+    .services-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%,380px),1fr));
+      gap: var(--space-6);
+    }
+
+    /* ── Recent Projects ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+
+    @media (max-width: 900px) { .projects-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .projects-grid { grid-template-columns: 1fr; } }
+
+    .project-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      background: var(--color-concrete);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .project-card:hover img { transform: scale(1.08); }
+
+    .project-card__info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+      padding: var(--space-6) var(--space-5) var(--space-5);
+      transform: translateY(10px);
+      opacity: 0;
+      transition: all var(--transition-base);
+    }
+
+    .project-card:hover .project-card__info { transform: translateY(0); opacity: 1; }
+
+    .project-card__info h4 {
+      font-size: var(--text-lg);
+      color: var(--color-white);
+      margin-bottom: var(--space-1);
+    }
+
+    .project-card__info span {
+      font-size: var(--text-xs);
+      color: var(--color-orange);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Toast Container ────────────────────────────────── -->
+<div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+<!-- ── Navbar ─────────────────────────────────────────── -->
+<header id="navbar" class="navbar" role="banner">
+  <div class="container">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Cymalaubat SUARL — Accueil">
+        <img src="assets/logo.svg" alt="Logo CMB Cymalaubat" class="navbar__logo-icon" width="48" height="48"/>
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-name">CYMALAUBAT</span>
+          <span class="navbar__logo-tagline">SUARL — BTP & Génie Civil</span>
+        </div>
+      </a>
+
+      <nav class="navbar__nav" role="navigation" aria-label="Navigation principale">
+        <a href="index.html"       class="navbar__link active">Accueil</a>
+        <a href="a-propos.html"    class="navbar__link">À Propos</a>
+        <a href="services.html"    class="navbar__link">Services</a>
+        <a href="realisations.html" class="navbar__link">Réalisations</a>
+        <a href="carrieres.html"   class="navbar__link">Carrières</a>
+        <a href="contact.html"     class="navbar__link">Contact</a>
+      </nav>
+
+      <div class="navbar__cta">
+        <a href="contact.html" class="btn btn--primary btn--sm" id="navDevisBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.19V181.81Z"/></svg>
+          Demander un devis
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── Mobile Nav ─────────────────────────────────────── -->
+<nav id="mobileNav" class="mobile-nav" aria-label="Navigation mobile">
+  <a href="index.html"       class="mobile-nav__link">Accueil</a>
+  <a href="a-propos.html"    class="mobile-nav__link">À Propos</a>
+  <a href="services.html"    class="mobile-nav__link">Services</a>
+  <a href="realisations.html" class="mobile-nav__link">Réalisations</a>
+  <a href="carrieres.html"   class="mobile-nav__link">Carrières</a>
+  <a href="contact.html"     class="mobile-nav__link">Contact</a>
+  <a href="contact.html"     class="btn btn--primary btn--lg" style="margin-top:2rem">Demander un devis</a>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────── -->
+<main id="main-content">
+<section class="hero" aria-label="Bannière principale">
+  <div class="hero__bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="geo-shape geo-shape--1"></div>
+  <div class="geo-shape geo-shape--2"></div>
+
+  <div class="container">
+    <div class="hero__content">
+      <span class="hero__eyebrow">
+        <span class="hero__eyebrow-dot"></span>
+        BTP & Génie Civil — Dakar, Sénégal
+        <span class="hero__eyebrow-dot"></span>
+      </span>
+
+      <h1 class="hero__title">
+        Bâtir l'Avenir<br/>
+        du Sénégal <span class="orange">Avec Excellence</span>
+      </h1>
+
+      <p class="hero__subtitle">
+        Cymalaubat SUARL (CMB) est votre partenaire de confiance pour tous vos projets de construction, rénovation et génie civil au Sénégal. Plus de 20 ans d'expertise à votre service.
+      </p>
+
+      <div class="hero__actions">
+        <a href="contact.html" class="btn btn--primary btn--xl" id="heroDevisBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.19V181.81Z"/></svg>
+          Demander un Devis Gratuit
+        </a>
+        <a href="realisations.html" class="btn btn--ghost btn--xl" id="heroPortfolioBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200Z"/></svg>
+          Voir nos Réalisations
+        </a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-counter data-target="20" data-suffix="+">20+</span>
+          <span class="hero__stat-label">Ans d'expérience</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-counter data-target="250" data-suffix="+">250+</span>
+          <span class="hero__stat-label">Projets réalisés</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-counter data-target="98" data-suffix="%">98%</span>
+          <span class="hero__stat-label">Clients satisfaits</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="hero__scroll-cue">
+    <a href="#stats" class="scroll-cue" aria-label="Défiler vers le bas">
+      <span class="scroll-cue__line"></span>
+      <span>Découvrir</span>
+    </a>
+  </div>
+</section>
+
+<!-- ── STATS BAND ──────────────────────────────────────── -->
+<section id="stats" class="stats-section section" aria-label="Chiffres clés">
+  <div class="container">
+    <div class="grid-4">
+      <div class="stat-card reveal">
+        <span class="stat-card__number" data-counter data-target="20" data-suffix="+" data-duration="1800">20+</span>
+        <span class="stat-card__label">Années d'Expertise</span>
+      </div>
+      <div class="stat-card reveal delay-100">
+        <span class="stat-card__number" data-counter data-target="250" data-suffix="+" data-duration="1800">250+</span>
+        <span class="stat-card__label">Projets Livrés</span>
+      </div>
+      <div class="stat-card reveal delay-200">
+        <span class="stat-card__number" data-counter data-target="60" data-suffix="+" data-duration="1800">60+</span>
+        <span class="stat-card__label">Clients Fidèles</span>
+      </div>
+      <div class="stat-card reveal delay-300">
+        <span class="stat-card__number" data-counter data-target="98" data-suffix="%" data-duration="1800">98%</span>
+        <span class="stat-card__label">Satisfaction Client</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES APERÇU ─────────────────────────────────── -->
+<section class="section section--anthracite" aria-labelledby="services-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Nos Expertises</span>
+      <h2 id="services-title">Nos Services <span class="text-orange">BTP</span></h2>
+      <div class="accent-line"></div>
+      <p>De la conception à la réalisation, Cymalaubat SUARL propose une gamme complète de prestations en BTP et Génie Civil pour répondre à tous vos besoins.</p>
+    </div>
+
+    <div class="services-preview">
+      <!-- Gros Oeuvre -->
+      <article class="service-card reveal">
+        <div class="img-parallax-wrap">
+          <img src="assets/images/service-gros-oeuvre.jpg" alt="Gros œuvre et construction à Dakar" class="service-card__img" loading="lazy" width="600" height="220"/>
+        </div>
+        <div class="service-card__body">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M240,208H224V96a16,16,0,0,0-16-16H144V48a16,16,0,0,0-16-16H48A16,16,0,0,0,32,48V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,48h80V208H48ZM64,72a8,8,0,0,1,8-8H88a8,8,0,0,1,0,16H72A8,8,0,0,1,64,72Zm0,40a8,8,0,0,1,8-8H88a8,8,0,0,1,0,16H72A8,8,0,0,1,64,112Zm0,40a8,8,0,0,1,8-8H88a8,8,0,0,1,0,16H72A8,8,0,0,1,64,152Z"/></svg>
+          </div>
+          <h3>Gros Œuvre & Construction</h3>
+          <p>Fondations, structures en béton armé, charpentes métalliques et maçonnerie. Nous réalisons vos bâtiments résidentiels, commerciaux et industriels selon les normes les plus strictes.</p>
+          <a href="services.html#gros-oeuvre" class="service-card__link">
+            En savoir plus
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Génie Civil -->
+      <article class="service-card reveal delay-100">
+        <div class="img-parallax-wrap">
+          <img src="assets/images/service-genie-civil.jpg" alt="Génie civil et ouvrages d'art Sénégal" class="service-card__img" loading="lazy" width="600" height="220"/>
+        </div>
+        <div class="service-card__body">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M236,120a12,12,0,0,1-12,12H208v76a12,12,0,0,1-12,12H60a12,12,0,0,1-12-12V132H32a12,12,0,0,1-8.49-20.49l96-96a12,12,0,0,1,16.97,0l96,96A12,12,0,0,1,236,120Z"/></svg>
+          </div>
+          <h3>Génie Civil & Ouvrages d'art</h3>
+          <p>Conception et réalisation de ponts, ouvrages hydrauliques, murs de soutènement et infrastructures lourdes. Notre expertise garantit des ouvrages durables et conformes aux standards internationaux.</p>
+          <a href="services.html#genie-civil" class="service-card__link">
+            En savoir plus
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- VRD -->
+      <article class="service-card reveal delay-200">
+        <div class="img-parallax-wrap">
+          <img src="assets/images/service-vrd.jpg" alt="VRD voirie et réseaux divers Sénégal" class="service-card__img" loading="lazy" width="600" height="220"/>
+        </div>
+        <div class="service-card__body">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M248,136a8,8,0,0,1-8,8H196.94l-28.72,57.44A8,8,0,0,1,161.06,206a7.93,7.93,0,0,1-3.35-.74A8,8,0,0,1,154,196.56L180.06,144H75.94L102,196.56a8,8,0,0,1-3.71,10.7,7.93,7.93,0,0,1-3.35.74,8,8,0,0,1-7.16-4.44L59.06,144H16a8,8,0,0,1,0-16H59.06L87.78,70.56A8,8,0,0,1,94.94,66h66.12a8,8,0,0,1,7.16,4.44L196.94,128H240A8,8,0,0,1,248,136Z"/></svg>
+          </div>
+          <h3>VRD & Voirie</h3>
+          <p>Aménagement de voiries, réseaux d'assainissement, adduction d'eau, électricité souterraine et éclairage public. Nous créons des espaces urbains fonctionnels et durables.</p>
+          <a href="services.html#vrd" class="service-card__link">
+            En savoir plus
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Rénovation -->
+      <article class="service-card reveal delay-300">
+        <div class="img-parallax-wrap">
+          <img src="assets/images/service-renovation.jpg" alt="Rénovation et réhabilitation de bâtiments" class="service-card__img" loading="lazy" width="600" height="220"/>
+        </div>
+        <div class="service-card__body">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M235.32,116.68,139.32,20.69a16,16,0,0,0-22.64,0L36.68,100.69a16,16,0,0,0,0,22.63l96,96a16.06,16.06,0,0,0,22.64,0L235.32,139.31a16,16,0,0,0,0-22.63ZM128,208,32,112l80-80,96,96Z"/></svg>
+          </div>
+          <h3>Rénovation & Réhabilitation</h3>
+          <p>Transformation complète de vos espaces existants : ravalement de façades, mise aux normes, rénovation intérieure et restauration de bâtiments anciens avec des matériaux de qualité.</p>
+          <a href="services.html#renovation" class="service-card__link">
+            En savoir plus
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Bureau d'études -->
+      <article class="service-card reveal delay-400">
+        <div class="img-parallax-wrap">
+          <img src="assets/images/service-bureau-etudes.jpg" alt="Bureau d'études et AMO BTP Dakar" class="service-card__img" loading="lazy" width="600" height="220"/>
+        </div>
+        <div class="service-card__body">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M224,72H200V56a16,16,0,0,0-16-16H72A16,16,0,0,0,56,56V72H32A16,16,0,0,0,16,88V200a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V88A16,16,0,0,0,224,72ZM72,56H184V72H72ZM224,200H32V88H224Z"/></svg>
+          </div>
+          <h3>Bureau d'études & AMO</h3>
+          <p>Études techniques, plans d'exécution, suivi et assistance à maîtrise d'ouvrage (AMO). Notre bureau d'études vous accompagne de la conception jusqu'à la réception des travaux.</p>
+          <a href="services.html#bureau-etudes" class="service-card__link">
+            En savoir plus
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div style="text-align:center; margin-top:var(--space-12)">
+      <a href="services.html" class="btn btn--secondary btn--lg">Voir tous nos services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── POURQUOI NOUS ────────────────────────────────────── -->
+<section class="section section--dark" aria-labelledby="why-title">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-16); align-items:center;" class="grid-why">
+      <div class="reveal-left">
+        <span class="eyebrow" style="display:inline-flex; align-items:center; gap:var(--space-2); font-size:var(--text-sm); font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-orange); margin-bottom:var(--space-4)">
+          <span style="width:30px;height:2px;background:var(--color-orange);display:inline-block"></span>
+          Pourquoi Cymalaubat
+          <span style="width:30px;height:2px;background:var(--color-orange);display:inline-block"></span>
+        </span>
+        <h2 id="why-title" style="margin-bottom:var(--space-6)">
+          Votre Partenaire BTP de <span class="text-orange">Confiance</span> depuis 2004
+        </h2>
+        <p style="margin-bottom:var(--space-8); font-size:var(--text-lg);">
+          Fondée à Dakar, Cymalaubat SUARL a bâti sa réputation sur la rigueur technique, le respect des délais et un engagement total envers la qualité. Notre équipe pluridisciplinaire maîtrise tous les aspects du BTP au Sénégal.
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:var(--space-6);">
+          <div class="benefit-item">
+            <div class="benefit-item__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M243.28,68.24l-24-23.56A16,16,0,0,0,208,40H48A16,16,0,0,0,32,56V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V128a8,8,0,0,0-16,0v72H48V56H208v.43l24,23.56A8,8,0,0,0,243.28,68.24ZM100.69,155.31a8,8,0,0,0,11.31,0L212,55.32l-11.31-11.31L112,144.69,76.69,109.37,65.37,120.69Z"/></svg>
+            </div>
+            <div class="benefit-item__text">
+              <h5>Qualité Certifiée</h5>
+              <p>Tous nos projets respectent les normes QHSE et les standards internationaux de construction. Nous ne faisons aucun compromis sur la qualité des matériaux et de l'exécution.</p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-item__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></svg>
+            </div>
+            <div class="benefit-item__text">
+              <h5>Respect des Délais</h5>
+              <p>Nous livrons nos chantiers dans les délais convenus grâce à une planification rigoureuse et un suivi quotidien de l'avancement des travaux.</p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-item__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M172,120a44,44,0,1,1-44-44A44.05,44.05,0,0,1,172,120Zm60,8H224a96.11,96.11,0,0,0-96-96V24a8,8,0,0,0-16,0V32a96.11,96.11,0,0,0-96,96H8a8,8,0,0,0,0,16H24a96.11,96.11,0,0,0,96,96v8a8,8,0,0,0,16,0v-8a96.11,96.11,0,0,0,96-96h8a8,8,0,0,0,0-16Zm-96,80a80.09,80.09,0,0,1-80-80,80.09,80.09,0,0,1,80-80,80.09,80.09,0,0,1,80,80A80.09,80.09,0,0,1,136,208Z"/></svg>
+            </div>
+            <div class="benefit-item__text">
+              <h5>Expertise Locale</h5>
+              <p>Parfaite connaissance du terrain sénégalais, des réglementations locales et des spécificités climatiques de la région de Dakar et Guédiawaye.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="img-parallax-wrap" style="border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-xl);">
+          <img src="assets/images/about-team.jpg" alt="L'équipe Cymalaubat SUARL" width="600" height="450" loading="lazy" style="width:100%;height:450px;object-fit:cover;"/>
+        </div>
+
+        <!-- Floating badge -->
+        <div style="position:relative; margin-top:-60px; margin-left:var(--space-6);">
+          <div class="glass-card" style="display:inline-flex; align-items:center; gap:var(--space-4); padding:var(--space-4) var(--space-6);">
+            <div style="width:52px;height:52px;background:var(--color-orange);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 256 256"><path d="M234.29,69.53l-128-64a8,8,0,0,0-12.58,6.61V72H32A16,16,0,0,0,16,88V216a16,16,0,0,0,16,16H240a16,16,0,0,0,16-16V76.09A8,8,0,0,0,234.29,69.53ZM32,88H93.72V216H32Zm208,128H109.72V88h-16V27.31L240,86.09Z"/></svg>
+            </div>
+            <div>
+              <div style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:700;color:var(--color-white)">RCCM Certifié</div>
+              <div style="font-size:var(--text-xs);color:var(--color-mid-gray)">SN.DKR.2004.240 — NINEA: 002332964</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RÉALISATIONS RÉCENTES ──────────────────────────── -->
+<section class="section section--concrete" aria-labelledby="projets-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Portfolio</span>
+      <h2 id="projets-title">Nos Dernières <span class="text-orange">Réalisations</span></h2>
+      <div class="accent-line"></div>
+      <p>Découvrez quelques-uns de nos projets réalisés à Dakar et dans la région de Guédiawaye.</p>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <img src="assets/images/projet-1.jpg" alt="Immeuble résidentiel Dakar" loading="lazy" width="400" height="300"/>
+        <div class="project-card__info">
+          <h4>Résidence Les Palmiers</h4>
+          <span>Gros Œuvre — Guédiawaye</span>
+        </div>
+      </div>
+      <div class="project-card reveal delay-100">
+        <img src="assets/images/projet-2.jpg" alt="Immeuble commercial en construction" loading="lazy" width="400" height="300"/>
+        <div class="project-card__info">
+          <h4>Centre Commercial Ndakarou</h4>
+          <span>Construction — Dakar</span>
+        </div>
+      </div>
+      <div class="project-card reveal delay-200">
+        <img src="assets/images/projet-route.jpg" alt="Route et voirie Dakar" loading="lazy" width="400" height="300"/>
+        <div class="project-card__info">
+          <h4>Voirie Quartier Wakhinane</h4>
+          <span>VRD & Voirie — Guédiawaye</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:var(--space-12)">
+      <a href="realisations.html" class="btn btn--primary btn--lg">Voir tout le portfolio</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ────────────────────────────────────────── -->
+<section class="cta-band" aria-label="Appel à l'action">
+  <div class="container">
+    <h2>Votre Projet Commence Ici</h2>
+    <p>Contactez-nous pour discuter de votre projet de construction ou de rénovation. Devis gratuit sous 48h.</p>
+    <div class="btn-group">
+      <a href="contact.html" class="btn" style="background:white;color:var(--color-orange-dark);font-weight:700;padding:var(--space-4) var(--space-10);border-radius:var(--radius-lg);font-size:var(--text-lg);" id="ctaDevisBtn">
+        Demander un Devis Gratuit
+      </a>
+      <a href="tel:+221775582150" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:2px solid rgba(255,255,255,0.4);padding:var(--space-4) var(--space-10);border-radius:var(--radius-lg);font-size:var(--text-lg);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
+        77 558 21 50
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ──────────────────────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <!-- Brand -->
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="assets/logo.svg" alt="Logo Cymalaubat SUARL" class="footer__logo-icon" width="48" height="48"/>
+          <div>
+            <div class="footer__logo-name">CYMALAUBAT SUARL</div>
+            <div class="footer__logo-sub">Cyprien Manda Laurent Bâtiment</div>
+          </div>
+        </div>
+        <p>Entreprise de BTP et Génie Civil basée à Dakar, Sénégal. Depuis 2004, nous bâtissons avec passion, expertise et un engagement total pour la qualité.</p>
+        <div class="footer__social" aria-label="Réseaux sociaux">
+          <a href="mailto:cymalaubat@gmail.com" class="social-link" title="Email" aria-label="Nous envoyer un email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.19V181.81Z"/></svg>
+          </a>
+          <a href="tel:+221775582150" class="social-link" title="Téléphone" aria-label="Nous appeler">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav aria-label="Liens du pied de page">
+        <h3 class="footer__col-title">Navigation</h3>
+        <ul class="footer__links">
+          <li><a href="index.html"        class="footer__link">› Accueil</a></li>
+          <li><a href="a-propos.html"     class="footer__link">› À Propos</a></li>
+          <li><a href="services.html"     class="footer__link">› Nos Services</a></li>
+          <li><a href="realisations.html" class="footer__link">› Réalisations</a></li>
+          <li><a href="carrieres.html"    class="footer__link">› Carrières</a></li>
+          <li><a href="contact.html"      class="footer__link">› Contact & Devis</a></li>
+        </ul>
+      </nav>
+
+      <!-- Services -->
+      <nav aria-label="Services BTP">
+        <h3 class="footer__col-title">Nos Services</h3>
+        <ul class="footer__links">
+          <li><a href="services.html#gros-oeuvre"    class="footer__link">› Gros Œuvre</a></li>
+          <li><a href="services.html#genie-civil"    class="footer__link">› Génie Civil</a></li>
+          <li><a href="services.html#vrd"            class="footer__link">› VRD & Voirie</a></li>
+          <li><a href="services.html#renovation"     class="footer__link">› Rénovation</a></li>
+          <li><a href="services.html#bureau-etudes"  class="footer__link">› Bureau d'Études</a></li>
+        </ul>
+      </nav>
+
+      <!-- Contact -->
+      <address>
+        <h3 class="footer__col-title">Contact</h3>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M128,16a96,96,0,1,0,96,96A96.11,96.11,0,0,0,128,16Zm0,176a80,80,0,1,1,80-80A80.09,80.09,0,0,1,128,192Zm0-104a12,12,0,1,1,12-12A12,12,0,0,1,128,88Zm4,24v56a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Z"/></svg>
+          </div>
+          <div class="footer__contact-text">
+            <strong>Adresse</strong>
+            27 Wakhinane Guédiawaye<br/>Dakar, Sénégal
+          </div>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
+          </div>
+          <div class="footer__contact-text">
+            <strong>Téléphone</strong>
+            <a href="tel:+221775582150" style="color:inherit">77 558 21 50</a><br/>
+            <a href="tel:+221708353656" style="color:inherit">70 835 36 56</a>
+          </div>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.19V181.81Z"/></svg>
+          </div>
+          <div class="footer__contact-text">
+            <strong>Email</strong>
+            <a href="mailto:cymalaubat@gmail.com" style="color:inherit">cymalaubat@gmail.com</a>
+          </div>
+        </div>
+      </address>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2004–2026 Cymalaubat SUARL — Tous droits réservés.</p>
+      <div class="footer__bottom-links">
+        <a href="contact.html">Politique de confidentialité</a>
+        <a href="contact.html">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal strip -->
+  <div class="footer__legal-strip">
+    <div class="container">
+      <div class="footer__legal-item"><strong>RCCM :</strong> SN.DKR.2004.240</div>
+      <div class="footer__legal-item"><strong>NINEA :</strong> 002332964</div>
+      <div class="footer__legal-item"><strong>Banque :</strong> BOA — 005681310005</div>
+      <div class="footer__legal-item"><strong>Dirigeant :</strong> Jean Cyprien Mendy</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Back to Top ─────────────────────────────────────── -->
+<button id="backToTop" class="back-to-top" aria-label="Retour en haut de page">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"/></svg>
+</button>
+
+<!-- Responsive style override -->
+<style>
+  @media (max-width: 900px) {
+    .grid-why { grid-template-columns: 1fr !important; }
+  }
+</style>
+
+<script src="js/main.js"></script>
+<script src="js/counter.js"></script>
+</body>
+</html>

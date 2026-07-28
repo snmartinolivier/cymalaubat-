@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>À Propos — Cymalaubat SUARL | BTP Dakar Sénégal</title>
+  <meta name="description" content="Découvrez l'histoire, la vision, les valeurs et la charte QHSE de Cymalaubat SUARL (CMB), entreprise de BTP et Génie Civil fondée à Dakar en 2004 par Jean Cyprien Mendy."/>
+  <link rel="canonical" href="a-propos.html"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+
+  <style>
+    /* Vision/Mission Cards */
+    .vm-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-6); }
+    @media(max-width:900px){ .vm-grid { grid-template-columns:1fr; } }
+    .vm-card {
+      border-radius:var(--radius-xl);
+      padding:var(--space-8);
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .vm-card--vision   { background:linear-gradient(135deg,#1a2940 0%, var(--color-concrete) 100%); border:1px solid rgba(26,90,160,0.3); }
+    .vm-card--mission  { background:linear-gradient(135deg,var(--color-orange-dark) 0%,#8B3500 100%); }
+    .vm-card--valeurs  { background:linear-gradient(135deg,#1a3a28 0%,var(--color-concrete) 100%); border:1px solid rgba(58,140,92,0.3); }
+    .vm-card .vm-icon  { font-size:3rem; margin-bottom:var(--space-4); display:block; }
+    .vm-card h3        { color:white; margin-bottom:var(--space-4); }
+    .vm-card p         { color:rgba(255,255,255,0.8); font-size:var(--text-sm); line-height:1.7; }
+
+    /* Team Cards */
+    .team-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:var(--space-6); }
+    .team-card { background:var(--color-concrete); border-radius:var(--radius-lg); overflow:hidden; text-align:center; border:1px solid rgba(255,255,255,0.05); transition:all var(--transition-base); }
+    .team-card:hover { transform:translateY(-6px); border-color:rgba(232,98,10,0.3); box-shadow:var(--shadow-orange); }
+    .team-card__avatar { width:100%; height:200px; background:linear-gradient(135deg,var(--color-concrete-mid),var(--color-anthracite)); display:flex; align-items:center; justify-content:center; font-size:5rem; }
+    .team-card__body { padding:var(--space-5); }
+    .team-card__name { font-family:var(--font-heading); font-size:var(--text-xl); color:white; margin-bottom:var(--space-1); }
+    .team-card__role { font-size:var(--text-xs); color:var(--color-orange); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:var(--space-3); }
+    .team-card__bio  { font-size:var(--text-sm); color:var(--color-mid-gray); line-height:1.65; }
+
+    /* QHSE */
+    .qhse-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-6); }
+    @media(max-width:1024px){ .qhse-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:600px)  { .qhse-grid { grid-template-columns:1fr; } }
+
+    /* Certif */
+    .certif-strip { display:flex; flex-wrap:wrap; gap:var(--space-4); justify-content:center; }
+    .certif-badge { background:var(--color-concrete); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-lg); padding:var(--space-4) var(--space-6); text-align:center; min-width:160px; transition:all var(--transition-base); }
+    .certif-badge:hover { border-color:var(--color-orange); }
+    .certif-badge .icon { font-size:2rem; margin-bottom:var(--space-2); display:block; }
+    .certif-badge .name { font-size:var(--text-sm); font-weight:600; color:white; }
+  </style>
+</head>
+<body>
+<div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+<!-- Navbar -->
+<header id="navbar" class="navbar" role="banner">
+  <div class="container"><div class="navbar__inner">
+    <a href="index.html" class="navbar__logo" aria-label="Accueil">
+      <img src="assets/logo.svg" alt="Logo CMB" class="navbar__logo-icon" width="48" height="48"/>
+      <div class="navbar__logo-text">
+        <span class="navbar__logo-name">CYMALAUBAT</span>
+        <span class="navbar__logo-tagline">SUARL — BTP & Génie Civil</span>
+      </div>
+    </a>
+    <nav class="navbar__nav" aria-label="Navigation principale">
+      <a href="index.html"       class="navbar__link">Accueil</a>
+      <a href="a-propos.html"    class="navbar__link active">À Propos</a>
+      <a href="services.html"    class="navbar__link">Services</a>
+      <a href="realisations.html" class="navbar__link">Réalisations</a>
+      <a href="carrieres.html"   class="navbar__link">Carrières</a>
+      <a href="contact.html"     class="navbar__link">Contact</a>
+    </nav>
+    <div class="navbar__cta"><a href="contact.html" class="btn btn--primary btn--sm">Demander un devis</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+
+<nav id="mobileNav" class="mobile-nav" aria-label="Navigation mobile">
+  <a href="index.html"       class="mobile-nav__link">Accueil</a>
+  <a href="a-propos.html"    class="mobile-nav__link">À Propos</a>
+  <a href="services.html"    class="mobile-nav__link">Services</a>
+  <a href="realisations.html" class="mobile-nav__link">Réalisations</a>
+  <a href="carrieres.html"   class="mobile-nav__link">Carrières</a>
+  <a href="contact.html"     class="mobile-nav__link">Contact</a>
+</nav>
+
+<main id="main-content">
+
+<!-- ── Page Hero ── -->
+<section class="page-hero" aria-label="À propos de Cymalaubat">
+  <div class="page-hero__bg" style="background-image:url('assets/images/about-team.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="page-hero__content">
+      <div class="page-hero__breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span class="sep">›</span>
+        <span>À Propos</span>
+      </div>
+      <h1>À Propos de <span class="text-orange">Cymalaubat SUARL</span></h1>
+      <p style="max-width:600px;font-size:var(--text-lg);color:rgba(255,255,255,0.8)">Cyprien Manda Laurent Bâtiment — Bâtir avec passion, construire avec excellence depuis 2004.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Histoire / Intro ── -->
+<section class="section section--anthracite" aria-labelledby="histoire-title">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center" class="grid-auto">
+      <div class="reveal-left">
+        <span class="eyebrow" style="display:inline-flex;align-items:center;gap:8px;font-size:var(--text-sm);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-orange);margin-bottom:var(--space-4)">
+          <span style="width:30px;height:2px;background:var(--color-orange)"></span>Notre Histoire
+        </span>
+        <h2 id="histoire-title">20 Ans d'Excellence au Cœur du <span class="text-orange">Sénégal</span></h2>
+        <div class="accent-line accent-line--left"></div>
+        <p style="margin-top:var(--space-4)">Fondée en 2004 par <strong style="color:white">Jean Cyprien Mendy</strong>, Cymalaubat SUARL — dont le nom complet est <em>Cyprien Manda Laurent Bâtiment</em> — est née d'une vision simple mais ambitieuse : offrir au Sénégal des prestations de BTP et de Génie Civil au niveau des standards internationaux, avec une profonde connaissance du contexte local.</p>
+        <p style="margin-top:var(--space-4)">Basée au 27 Wakhinane, à Guédiawaye dans la région de Dakar, notre entreprise a progressivement élargi son champ d'expertise pour couvrir l'ensemble des métiers du BTP : gros œuvre, génie civil, VRD, rénovation et bureau d'études.</p>
+        <p style="margin-top:var(--space-4)">Aujourd'hui, avec plus de 250 projets réalisés et une équipe de professionnels qualifiés, Cymalaubat SUARL est reconnue comme l'un des acteurs fiables du secteur de la construction au Sénégal.</p>
+        <div style="display:flex;gap:var(--space-8);margin-top:var(--space-8);flex-wrap:wrap">
+          <div>
+            <div style="font-family:var(--font-heading);font-size:var(--text-4xl);font-weight:700;color:var(--color-orange)">2004</div>
+            <div style="font-size:var(--text-sm);color:var(--color-mid-gray)">Année de création</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-heading);font-size:var(--text-4xl);font-weight:700;color:var(--color-orange)">Dakar</div>
+            <div style="font-size:var(--text-sm);color:var(--color-mid-gray)">Siège social</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-heading);font-size:var(--text-4xl);font-weight:700;color:var(--color-orange)">SUARL</div>
+            <div style="font-size:var(--text-sm);color:var(--color-mid-gray)">Forme juridique</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="reveal-right">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-item__year">2004</div>
+            <h4>Fondation de Cymalaubat SUARL</h4>
+            <p>Jean Cyprien Mendy crée l'entreprise à Guédiawaye, Dakar, avec une équipe de 5 personnes et la volonté de bâtir différemment.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__year">2008</div>
+            <h4>Premiers Grands Chantiers</h4>
+            <p>Réalisation des premiers projets d'envergure en gros œuvre résidentiel dans la région de Dakar. Croissance de l'équipe à 25 collaborateurs.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__year">2012</div>
+            <h4>Extension au Génie Civil</h4>
+            <p>Développement des compétences en génie civil et ouvrages d'art. Obtention de marchés publics stratégiques en VRD.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__year">2016</div>
+            <h4>Création du Bureau d'Études</h4>
+            <p>Ouverture du département AMO et bureau d'études techniques, permettant une offre clé-en-main de la conception à la livraison.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__year">2024</div>
+            <h4>20 Ans — Bilan & Perspectives</h4>
+            <p>Célébration des 20 ans avec 250+ projets réalisés. Engagement vers des constructions éco-responsables et la formation des jeunes talents sénégalais.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Vision / Mission / Valeurs ── -->
+<section class="section section--dark" aria-labelledby="vision-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Notre ADN</span>
+      <h2 id="vision-title">Vision, Mission & <span class="text-orange">Valeurs</span></h2>
+      <div class="accent-line"></div>
+    </div>
+    <div class="vm-grid">
+      <div class="vm-card vm-card--vision reveal">
+        <span class="vm-icon">🔭</span>
+        <h3>Notre Vision</h3>
+        <p>Devenir la référence du BTP en Afrique de l'Ouest en offrant des ouvrages de classe mondiale, en intégrant les technologies innovantes de construction et en contribuant activement au développement durable du Sénégal.</p>
+      </div>
+      <div class="vm-card vm-card--mission reveal delay-200">
+        <span class="vm-icon">🎯</span>
+        <h3>Notre Mission</h3>
+        <p>Réaliser des projets de construction et de génie civil qui dépassent les attentes de nos clients, en respectant les délais, les budgets et les normes de qualité les plus élevées, tout en veillant à la sécurité de tous sur nos chantiers.</p>
+      </div>
+      <div class="vm-card vm-card--valeurs reveal delay-400">
+        <span class="vm-icon">⚖️</span>
+        <h3>Nos Valeurs</h3>
+        <p><strong style="color:white">Intégrité</strong> — Honnêteté et transparence dans toutes nos relations.<br/><strong style="color:white">Excellence</strong> — Qualité sans compromis à chaque étape.<br/><strong style="color:white">Innovation</strong> — Adoption des meilleures pratiques et technologies.<br/><strong style="color:white">Solidarité</strong> — Engagement envers nos équipes et notre communauté.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── QHSE ── -->
+<section class="section section--anthracite" aria-labelledby="qhse-title">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:var(--space-16);align-items:center" class="grid-auto">
+      <div class="reveal-left">
+        <span class="eyebrow" style="display:inline-flex;align-items:center;gap:8px;font-size:var(--text-sm);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-orange);margin-bottom:var(--space-4)">
+          <span style="width:30px;height:2px;background:var(--color-orange)"></span>Charte QHSE
+        </span>
+        <h2 id="qhse-title">Qualité, Hygiène, Sécurité & <span class="text-orange">Environnement</span></h2>
+        <div class="accent-line accent-line--left"></div>
+        <p style="margin-top:var(--space-4)">Chez Cymalaubat SUARL, la charte QHSE n'est pas un simple document — c'est notre façon de travailler au quotidien. Chaque chantier est géré selon des protocoles stricts de qualité, d'hygiène, de sécurité et de respect de l'environnement.</p>
+        <p style="margin-top:var(--space-4)">Notre équipe QHSE veille à l'application rigoureuse de ces standards sur l'ensemble de nos sites, formant régulièrement nos collaborateurs aux meilleures pratiques de sécurité sur les chantiers.</p>
+        <div style="margin-top:var(--space-8)">
+          <img src="assets/images/qhse.jpg" alt="Chantier QHSE Cymalaubat — travailleurs avec EPI" loading="lazy" width="560" height="320" style="width:100%;height:280px;object-fit:cover;border-radius:var(--radius-xl);box-shadow:var(--shadow-xl)"/>
+        </div>
+      </div>
+      <div class="qhse-grid reveal-right">
+        <div class="qhse-pillar">
+          <div class="qhse-pillar__letter">Q</div>
+          <div class="qhse-pillar__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M243.28,68.24l-24-23.56A16,16,0,0,0,208,40H48A16,16,0,0,0,32,56V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V128a8,8,0,0,0-16,0v72H48V56H208v.43l24,23.56A8,8,0,0,0,243.28,68.24ZM100.69,155.31a8,8,0,0,0,11.31,0L212,55.32l-11.31-11.31L112,144.69,76.69,109.37,65.37,120.69Z"/></svg>
+          </div>
+          <h4>Qualité</h4>
+          <p>Contrôle rigoureux de tous les matériaux et procédés. Respect des normes BCSN et standards internationaux ISO.</p>
+        </div>
+        <div class="qhse-pillar">
+          <div class="qhse-pillar__letter">H</div>
+          <div class="qhse-pillar__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M216,136a88.1,88.1,0,0,1-88,88A88.1,88.1,0,0,1,40,136C40,92,128,24,128,24S216,92,216,136Z"/></svg>
+          </div>
+          <h4>Hygiène</h4>
+          <p>Chantiers propres et organisés. Gestion responsable des déchets et des matières dangereuses selon la réglementation.</p>
+        </div>
+        <div class="qhse-pillar">
+          <div class="qhse-pillar__letter">S</div>
+          <div class="qhse-pillar__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M208,40H48A16,16,0,0,0,32,56V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V56A16,16,0,0,0,208,40ZM96,176a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,0a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0ZM128,88a16,16,0,1,1,16-16A16,16,0,0,1,128,88Z"/></svg>
+          </div>
+          <h4>Sécurité</h4>
+          <p>Port obligatoire des EPI (casques, gilets, harnais). Formations sécurité régulières et zéro tolérance pour les infractions.</p>
+        </div>
+        <div class="qhse-pillar">
+          <div class="qhse-pillar__letter">E</div>
+          <div class="qhse-pillar__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M222.14,58.87A8,8,0,0,0,214,56c-1.36.15-33.37,4-66.17,37.46A119,119,0,0,0,128,120.54,119.62,119.62,0,0,0,99.3,76.87C66,42.29,34,38.15,32.58,38A8,8,0,0,0,24,47.41C29,107,63.06,140,87.14,155.47A56.22,56.22,0,0,0,72,192a8,8,0,0,0,16,0,40.07,40.07,0,0,1,32-39.26V200a8,8,0,0,0,16,0V152.74A40.07,40.07,0,0,1,168,192a8,8,0,0,0,16,0,56.22,56.22,0,0,0-15.14-36.53c24.08-15.46,58.14-48.48,63.14-108.1A8,8,0,0,0,222.14,58.87Z"/></svg>
+          </div>
+          <h4>Environnement</h4>
+          <p>Minimisation de l'impact environnemental. Utilisation de matériaux éco-responsables et gestion optimisée des ressources naturelles.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Équipe ── -->
+<section class="section section--dark" aria-labelledby="equipe-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Notre Équipe</span>
+      <h2 id="equipe-title">Les Hommes & Femmes de <span class="text-orange">Cymalaubat</span></h2>
+      <div class="accent-line"></div>
+      <p>Notre force réside dans notre équipe pluridisciplinaire de professionnels passionnés par le BTP.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-card__avatar">👷</div>
+        <div class="team-card__body">
+          <div class="team-card__name">Jean Cyprien Mendy</div>
+          <div class="team-card__role">Directeur Général & Fondateur</div>
+          <p class="team-card__bio">Ingénieur en BTP avec plus de 20 ans d'expérience dans la construction et le génie civil au Sénégal. Visionnaire et entrepreneur engagé.</p>
+        </div>
+      </div>
+      <div class="team-card reveal delay-100">
+        <div class="team-card__avatar">🏗️</div>
+        <div class="team-card__body">
+          <div class="team-card__name">Direction Technique</div>
+          <div class="team-card__role">Chef de Projets Génie Civil</div>
+          <p class="team-card__bio">Expert en ouvrages d'art et structures complexes. Coordination technique des grands chantiers et supervision des équipes terrain.</p>
+        </div>
+      </div>
+      <div class="team-card reveal delay-200">
+        <div class="team-card__avatar">📐</div>
+        <div class="team-card__body">
+          <div class="team-card__name">Bureau d'Études</div>
+          <div class="team-card__role">Responsable Études & AMO</div>
+          <p class="team-card__bio">Conception, plans d'exécution et suivi de la maîtrise d'ouvrage. Coordination entre clients, architectes et équipes de réalisation.</p>
+        </div>
+      </div>
+      <div class="team-card reveal delay-300">
+        <div class="team-card__avatar">🔒</div>
+        <div class="team-card__body">
+          <div class="team-card__name">Responsable QHSE</div>
+          <div class="team-card__role">Qualité, Hygiène, Sécurité</div>
+          <p class="team-card__bio">Veille à l'application des normes QHSE sur tous les chantiers. Formations sécurité, audits et certification des processus qualité.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Certifications ── -->
+<section class="section section--concrete" aria-labelledby="certif-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Légitimité</span>
+      <h2 id="certif-title">Agréments & <span class="text-orange">Certifications</span></h2>
+      <div class="accent-line"></div>
+    </div>
+    <div class="certif-strip reveal">
+      <div class="certif-badge">
+        <span class="icon">📋</span>
+        <div class="name">RCCM Enregistré</div>
+        <div style="font-size:var(--text-xs);color:var(--color-mid-gray);margin-top:4px">SN.DKR.2004.240</div>
+      </div>
+      <div class="certif-badge">
+        <span class="icon">🏛️</span>
+        <div class="name">NINEA</div>
+        <div style="font-size:var(--text-xs);color:var(--color-mid-gray);margin-top:4px">002332964</div>
+      </div>
+      <div class="certif-badge">
+        <span class="icon">🏦</span>
+        <div class="name">Compte BOA</div>
+        <div style="font-size:var(--text-xs);color:var(--color-mid-gray);margin-top:4px">005681310005</div>
+      </div>
+      <div class="certif-badge">
+        <span class="icon">🛡️</span>
+        <div class="name">Charte QHSE</div>
+        <div style="font-size:var(--text-xs);color:var(--color-mid-gray);margin-top:4px">Certifiée interne</div>
+      </div>
+      <div class="certif-badge">
+        <span class="icon">🏆</span>
+        <div class="name">Agrément BTP</div>
+        <div style="font-size:var(--text-xs);color:var(--color-mid-gray);margin-top:4px">Sénégal</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band" aria-label="Appel à l'action">
+  <div class="container">
+    <h2>Travaillons Ensemble</h2>
+    <p>Vous avez un projet de construction ou de rénovation ? Contactez notre équipe pour un devis gratuit et sans engagement.</p>
+    <div class="btn-group">
+      <a href="contact.html" class="btn" style="background:white;color:var(--color-orange-dark);font-weight:700;padding:var(--space-4) var(--space-10);border-radius:var(--radius-lg);font-size:var(--text-lg);">Demander un devis</a>
+      <a href="services.html" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:2px solid rgba(255,255,255,0.4);padding:var(--space-4) var(--space-10);border-radius:var(--radius-lg);font-size:var(--text-lg);">Nos services</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="assets/logo.svg" alt="Logo" class="footer__logo-icon" width="48" height="48"/>
+          <div>
+            <div class="footer__logo-name">CYMALAUBAT SUARL</div>
+            <div class="footer__logo-sub">Cyprien Manda Laurent Bâtiment</div>
+          </div>
+        </div>
+        <p>Entreprise de BTP et Génie Civil basée à Dakar, Sénégal. Fondée en 2004 par Jean Cyprien Mendy.</p>
+      </div>
+      <nav aria-label="Pied de page navigation">
+        <h3 class="footer__col-title">Navigation</h3>
+        <ul class="footer__links">
+          <li><a href="index.html"        class="footer__link">› Accueil</a></li>
+          <li><a href="a-propos.html"     class="footer__link">› À Propos</a></li>
+          <li><a href="services.html"     class="footer__link">› Nos Services</a></li>
+          <li><a href="realisations.html" class="footer__link">› Réalisations</a></li>
+          <li><a href="carrieres.html"    class="footer__link">› Carrières</a></li>
+          <li><a href="contact.html"      class="footer__link">› Contact & Devis</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services footer">
+        <h3 class="footer__col-title">Nos Services</h3>
+        <ul class="footer__links">
+          <li><a href="services.html#gros-oeuvre"   class="footer__link">› Gros Œuvre</a></li>
+          <li><a href="services.html#genie-civil"   class="footer__link">› Génie Civil</a></li>
+          <li><a href="services.html#vrd"           class="footer__link">› VRD & Voirie</a></li>
+          <li><a href="services.html#renovation"    class="footer__link">› Rénovation</a></li>
+          <li><a href="services.html#bureau-etudes" class="footer__link">› Bureau d'Études</a></li>
+        </ul>
+      </nav>
+      <address>
+        <h3 class="footer__col-title">Contact</h3>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📍</div>
+          <div class="footer__contact-text"><strong>Adresse</strong>27 Wakhinane Guédiawaye, Dakar</div>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📞</div>
+          <div class="footer__contact-text"><strong>Téléphone</strong><a href="tel:+221775582150" style="color:inherit">77 558 21 50</a> / <a href="tel:+221708353656" style="color:inherit">70 835 36 56</a></div>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">✉️</div>
+          <div class="footer__contact-text"><strong>Email</strong><a href="mailto:cymalaubat@gmail.com" style="color:inherit">cymalaubat@gmail.com</a></div>
+        </div>
+      </address>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2004–2026 Cymalaubat SUARL — Tous droits réservés.</p>
+    </div>
+  </div>
+  <div class="footer__legal-strip">
+    <div class="container">
+      <div class="footer__legal-item"><strong>RCCM :</strong> SN.DKR.2004.240</div>
+      <div class="footer__legal-item"><strong>NINEA :</strong> 002332964</div>
+      <div class="footer__legal-item"><strong>Banque :</strong> BOA — 005681310005</div>
+      <div class="footer__legal-item"><strong>Dirigeant :</strong> Jean Cyprien Mendy</div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Retour en haut">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"/></svg>
+</button>
+
+<style>@media(max-width:900px){.grid-auto{grid-template-columns:1fr!important}}</style>
+<script src="js/main.js"></script>
+</body>
+</html>
