@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact & Devis — Cymalaubat SUARL | BTP Dakar Sénégal</title>
+  <meta name="description" content="Contactez Cymalaubat SUARL pour votre projet BTP à Dakar. Formulaire de devis gratuit avec upload de plans (PDF, DWG jusqu'à 25 Mo). Réponse sous 48h. Tél : 77 558 21 50."/>
+  <link rel="canonical" href="contact.html"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: var(--space-16);
+      align-items: start;
+    }
+
+    @media(max-width:1000px) { .contact-layout { grid-template-columns: 1fr; } }
+
+    .contact-info-card {
+      background: var(--color-concrete);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      border: 1px solid rgba(255,255,255,0.06);
+      position: sticky;
+      top: 100px;
+    }
+
+    .map-embed {
+      width: 100%;
+      height: 280px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: var(--space-6);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      filter: invert(0.85) hue-rotate(180deg) brightness(0.9);
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--color-off-white);
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      font-weight: 500;
+      text-align: left;
+      padding: var(--space-5) 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-4);
+      transition: color var(--transition-base);
+    }
+
+    .faq-question:hover { color: var(--color-orange); }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--color-orange-glow);
+      border: 1px solid rgba(232,98,10,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: var(--text-lg);
+      color: var(--color-orange);
+      transition: transform var(--transition-base), background var(--transition-base);
+    }
+
+    .faq-question[aria-expanded="true"] .faq-icon {
+      transform: rotate(45deg);
+      background: var(--color-orange);
+      color: white;
+    }
+
+    .faq-answer {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .faq-answer.open {
+      max-height: 300px;
+      padding-bottom: var(--space-5);
+    }
+
+    .faq-answer p {
+      font-size: var(--text-sm);
+      line-height: 1.75;
+    }
+  </style>
+</head>
+<body>
+<div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+<!-- Navbar -->
+<header id="navbar" class="navbar" role="banner">
+  <div class="container"><div class="navbar__inner">
+    <a href="index.html" class="navbar__logo" aria-label="Accueil">
+      <img src="assets/logo.svg" alt="Logo CMB" class="navbar__logo-icon" width="48" height="48"/>
+      <div class="navbar__logo-text">
+        <span class="navbar__logo-name">CYMALAUBAT</span>
+        <span class="navbar__logo-tagline">SUARL — BTP & Génie Civil</span>
+      </div>
+    </a>
+    <nav class="navbar__nav" aria-label="Navigation principale">
+      <a href="index.html"       class="navbar__link">Accueil</a>
+      <a href="a-propos.html"    class="navbar__link">À Propos</a>
+      <a href="services.html"    class="navbar__link">Services</a>
+      <a href="realisations.html" class="navbar__link">Réalisations</a>
+      <a href="carrieres.html"   class="navbar__link">Carrières</a>
+      <a href="contact.html"     class="navbar__link active">Contact</a>
+    </nav>
+    <div class="navbar__cta"><a href="#devis" class="btn btn--primary btn--sm">Demander un devis</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<nav id="mobileNav" class="mobile-nav" aria-label="Mobile">
+  <a href="index.html"       class="mobile-nav__link">Accueil</a>
+  <a href="a-propos.html"    class="mobile-nav__link">À Propos</a>
+  <a href="services.html"    class="mobile-nav__link">Services</a>
+  <a href="realisations.html" class="mobile-nav__link">Réalisations</a>
+  <a href="carrieres.html"   class="mobile-nav__link">Carrières</a>
+  <a href="contact.html"     class="mobile-nav__link">Contact</a>
+</nav>
+
+<main id="main-content">
+
+<!-- ── Page Hero ── -->
+<section class="page-hero" style="min-height:300px" aria-label="Contact et devis">
+  <div class="page-hero__bg" style="background-image:url('assets/images/hero.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="page-hero__content">
+      <div class="page-hero__breadcrumb">
+        <a href="index.html">Accueil</a><span class="sep">›</span><span>Contact & Devis</span>
+      </div>
+      <h1>Contact & <span class="text-orange">Devis Gratuit</span></h1>
+      <p style="max-width:580px;font-size:var(--text-lg);color:rgba(255,255,255,0.8)">Parlez-nous de votre projet. Nous vous répondons sous 48 heures avec un devis personnalisé et sans engagement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact Section ── -->
+<section class="section section--anthracite" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Infos Contact -->
+      <div>
+        <div class="contact-info-card reveal-left">
+          <h2 id="contact-title" style="margin-bottom:var(--space-6)">Nos <span class="text-orange">Coordonnées</span></h2>
+
+          <div class="footer__contact-item" style="margin-bottom:var(--space-5)">
+            <div class="footer__contact-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M128,16a96,96,0,1,0,96,96A96.11,96.11,0,0,0,128,16Zm0,176a80,80,0,1,1,80-80A80.09,80.09,0,0,1,128,192Zm0-104a12,12,0,1,1,12-12A12,12,0,0,1,128,88Zm4,24v56a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Z"/></svg>
+            </div>
+            <div class="footer__contact-text">
+              <strong>Adresse du Siège</strong>
+              27 Wakhinane Guédiawaye<br/>Dakar, Sénégal
+            </div>
+          </div>
+
+          <div class="footer__contact-item" style="margin-bottom:var(--space-5)">
+            <div class="footer__contact-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
+            </div>
+            <div class="footer__contact-text">
+              <strong>Téléphone</strong>
+              <a href="tel:+221775582150" style="color:var(--color-orange)">77 558 21 50</a><br/>
+              <a href="tel:+221708353656" style="color:var(--color-off-white)">70 835 36 56</a><br/>
+              <span style="font-size:var(--text-xs);color:var(--color-mid-gray)">(Dir. Jean Cyprien Mendy : 77 692 34 37)</span>
+            </div>
+          </div>
+
+          <div class="footer__contact-item" style="margin-bottom:var(--space-5)">
+            <div class="footer__contact-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.19V181.81Z"/></svg>
+            </div>
+            <div class="footer__contact-text">
+              <strong>Email</strong>
+              <a href="mailto:cymalaubat@gmail.com" style="color:var(--color-orange)">cymalaubat@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Z"/></svg>
+            </div>
+            <div class="footer__contact-text">
+              <strong>Infos Légales</strong>
+              RCCM : SN.DKR.2004.240<br/>
+              NINEA : 002332964<br/>
+              BOA : 005681310005
+            </div>
+          </div>
+
+          <!-- Horaires -->
+          <div style="margin-top:var(--space-6);padding-top:var(--space-6);border-top:1px solid rgba(255,255,255,0.08)">
+            <h4 style="font-size:var(--text-lg);margin-bottom:var(--space-4)">Horaires d'Ouverture</h4>
+            <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2);font-size:var(--text-sm)">
+              <span style="color:var(--color-mid-gray)">Lun – Ven</span>
+              <span style="color:white">08h00 – 18h00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2);font-size:var(--text-sm)">
+              <span style="color:var(--color-mid-gray)">Samedi</span>
+              <span style="color:white">08h00 – 13h00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--text-sm)">
+              <span style="color:var(--color-mid-gray)">Dimanche</span>
+              <span style="color:var(--color-concrete-light)">Fermé</span>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="map-embed">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-17.4200,14.7500,-17.3400,14.8100&layer=mapnik&marker=14.7800,-17.3800"
+              title="Localisation Cymalaubat SUARL — Guédiawaye, Dakar"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p style="text-align:center;font-size:var(--text-xs);color:var(--color-mid-gray);margin-top:var(--space-2)">
+            27 Wakhinane, Guédiawaye, Dakar
+          </p>
+        </div>
+      </div>
+
+      <!-- Formulaire Devis -->
+      <div id="devis" style="scroll-margin-top:100px">
+        <div class="reveal-right">
+          <h2 style="margin-bottom:var(--space-2)">Demande de <span class="text-orange">Devis</span></h2>
+          <p style="margin-bottom:var(--space-8)">Remplissez ce formulaire détaillé pour obtenir un devis précis et adapté à votre projet. Vous pouvez également déposer vos plans directement.</p>
+
+          <form id="devisForm" class="glass-card" novalidate aria-label="Formulaire de demande de devis">
+
+            <!-- Identité -->
+            <h4 style="font-size:var(--text-xl);margin-bottom:var(--space-5);color:var(--color-orange)">01 — Vos Coordonnées</h4>
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label" for="devisNom">Nom & Prénom <span class="required">*</span></label>
+                <input type="text" id="devisNom" name="nom" class="form-control" placeholder="Jean Dupont" required autocomplete="name"/>
+                <div class="form-error" role="alert"></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="devisSociete">Société / Organisation</label>
+                <input type="text" id="devisSociete" name="societe" class="form-control" placeholder="Mon Entreprise SARL" autocomplete="organization"/>
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label" for="devisEmail">Email <span class="required">*</span></label>
+                <input type="email" id="devisEmail" name="email" class="form-control" placeholder="contact@exemple.com" required autocomplete="email"/>
+                <div class="form-error" role="alert"></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="devisTel">Téléphone <span class="required">*</span></label>
+                <input type="tel" id="devisTel" name="telephone" class="form-control" placeholder="77 000 00 00" required autocomplete="tel"/>
+                <div class="form-error" role="alert"></div>
+              </div>
+            </div>
+
+            <!-- Projet -->
+            <h4 style="font-size:var(--text-xl);margin-bottom:var(--space-5);margin-top:var(--space-6);color:var(--color-orange)">02 — Votre Projet</h4>
+            <div class="form-group">
+              <label class="form-label" for="projectType">Type de projet <span class="required">*</span></label>
+              <select id="projectType" name="type_projet" class="form-control" required>
+                <option value="" disabled selected>Sélectionnez le type de projet</option>
+                <option value="residentiel">Construction résidentielle (villa, immeuble)</option>
+                <option value="commercial">Bâtiment commercial / institutionnel</option>
+                <option value="industriel">Construction industrielle / entrepôt</option>
+                <option value="genie-civil">Ouvrage de génie civil (pont, dallot, mur)</option>
+                <option value="vrd">VRD & Voirie</option>
+                <option value="renovation">Rénovation / Réhabilitation</option>
+                <option value="bureau">Bureau d'études / AMO seulement</option>
+              </select>
+              <div class="form-error" role="alert"></div>
+            </div>
+
+            <!-- Surface (shown for: residentiel, commercial, industriel, renovation) -->
+            <div class="form-group" data-show-for="residentiel,commercial,industriel,renovation">
+              <label class="form-label" for="devisSurface">Surface approximative (m²)</label>
+              <input type="number" id="devisSurface" name="surface" class="form-control" placeholder="Exemple : 250" min="1"/>
+              <div class="form-hint">Superficie totale du projet en mètres carrés</div>
+            </div>
+
+            <!-- Nombre d'étages (residentiel, commercial) -->
+            <div class="form-group" data-show-for="residentiel,commercial">
+              <label class="form-label" for="devisEtages">Nombre d'étages prévus</label>
+              <select id="devisEtages" name="etages" class="form-control">
+                <option value="">Sélectionnez</option>
+                <option value="rdc">Rez-de-chaussée uniquement</option>
+                <option value="r1">R+1</option>
+                <option value="r2">R+2</option>
+                <option value="r3">R+3</option>
+                <option value="r4plus">R+4 et plus</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="devisLocalisation">Localisation du projet <span class="required">*</span></label>
+              <input type="text" id="devisLocalisation" name="localisation" class="form-control" placeholder="Ex: Guédiawaye, Dakar" required/>
+              <div class="form-error" role="alert"></div>
+            </div>
+
+            <!-- Budget Slider -->
+            <div class="form-group">
+              <label class="form-label" for="budgetSlider">Budget estimé</label>
+              <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)">
+                <span style="font-size:var(--text-sm);color:var(--color-mid-gray)">Budget :</span>
+                <span id="budgetDisplay" style="font-family:var(--font-heading);font-size:var(--text-xl);color:var(--color-orange);font-weight:600">5 000 k FCFA</span>
+              </div>
+              <input type="range" id="budgetSlider" name="budget" class="range-slider" min="1000000" max="500000000" step="1000000" value="5000000" aria-label="Budget estimé"/>
+              <div style="display:flex;justify-content:space-between;margin-top:var(--space-1);font-size:var(--text-xs);color:var(--color-mid-gray)">
+                <span>1 M FCFA</span>
+                <span>500 M FCFA</span>
+              </div>
+            </div>
+
+            <!-- Délai -->
+            <div class="form-group">
+              <label class="form-label" for="devisDelai">Délai souhaité de démarrage</label>
+              <select id="devisDelai" name="delai" class="form-control">
+                <option value="">Sélectionnez</option>
+                <option value="urgent">Urgent (dès que possible)</option>
+                <option value="1mois">Dans 1 mois</option>
+                <option value="3mois">Dans 2-3 mois</option>
+                <option value="6mois">Dans 6 mois</option>
+                <option value="planif">En cours de planification</option>
+              </select>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+              <label class="form-label" for="devisDescription">Description du projet <span class="required">*</span></label>
+              <textarea id="devisDescription" name="description" class="form-control" rows="5" placeholder="Décrivez votre projet : nature des travaux, contraintes spécifiques, matériaux souhaités, informations importantes..." required></textarea>
+              <div class="form-error" role="alert"></div>
+            </div>
+
+            <!-- Plans Upload -->
+            <h4 style="font-size:var(--text-xl);margin-bottom:var(--space-5);margin-top:var(--space-6);color:var(--color-orange)">03 — Dépôt de Plans (Optionnel)</h4>
+            <div class="form-group">
+              <label class="form-label">Plans, croquis ou documents (PDF, DWG, ZIP — max 25 Mo)</label>
+              <div class="file-drop" id="devisDropZone" aria-label="Zone de dépôt de fichiers">
+                <input type="file" id="devisFile" name="plans" accept=".pdf,.dwg,.dxf,.zip,.jpg,.png" aria-label="Choisir un fichier plan"/>
+                <span class="file-drop__icon">📐</span>
+                <p class="file-drop__text">
+                  <strong>Glissez vos plans ici</strong> ou cliquez pour parcourir<br/>
+                  PDF, DWG, DXF, ZIP, JPG, PNG — Maximum 25 Mo
+                </p>
+              </div>
+              <div class="progress-bar" id="devisProgress" aria-label="Progression du téléversement">
+                <div class="progress-bar__fill"></div>
+              </div>
+              <div id="devisFileInfo" style="display:none;margin-top:var(--space-2)"></div>
+            </div>
+
+            <!-- Submit -->
+            <div style="text-align:center;margin-top:var(--space-8)">
+              <button type="submit" class="btn btn--primary btn--xl" id="devisSubmitBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.42,29.84l84.43,38.4,38.41,84.44A15.86,15.86,0,0,0,154.6,244a16.13,16.13,0,0,0,4-.5,15.85,15.85,0,0,0,11.34-11.19l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68Z"/></svg>
+                Envoyer ma demande de devis
+              </button>
+              <p style="margin-top:var(--space-3);font-size:var(--text-xs);color:var(--color-mid-gray)">
+                🔒 Vos données sont confidentielles. Réponse sous 48h ouvrées.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Formulaire Contact Simple ── -->
+<section class="section section--dark" aria-labelledby="contact-simple-title">
+  <div class="container" style="max-width:700px">
+    <div class="section-header">
+      <span class="eyebrow">Message Simple</span>
+      <h2 id="contact-simple-title">Envoyer un <span class="text-orange">Message</span></h2>
+      <div class="accent-line"></div>
+      <p>Une question ? Une demande d'information ? Contactez-nous directement.</p>
+    </div>
+
+    <form id="contactForm" class="glass-card reveal-scale" novalidate aria-label="Formulaire de contact simple">
+      <div class="grid-2">
+        <div class="form-group">
+          <label class="form-label" for="contactNom">Nom <span class="required">*</span></label>
+          <input type="text" id="contactNom" name="nom" class="form-control" placeholder="Votre nom" required autocomplete="name"/>
+          <div class="form-error" role="alert"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="contactEmail">Email <span class="required">*</span></label>
+          <input type="email" id="contactEmail" name="email" class="form-control" placeholder="email@exemple.com" required autocomplete="email"/>
+          <div class="form-error" role="alert"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="contactSujet">Sujet</label>
+        <input type="text" id="contactSujet" name="sujet" class="form-control" placeholder="Sujet de votre message"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="contactMsg">Message <span class="required">*</span></label>
+        <textarea id="contactMsg" name="message" class="form-control" rows="5" placeholder="Votre message..." required></textarea>
+        <div class="form-error" role="alert"></div>
+      </div>
+      <div style="text-align:center">
+        <button type="submit" class="btn btn--primary btn--lg">Envoyer le message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section section--anthracite" aria-labelledby="faq-title">
+  <div class="container" style="max-width:800px">
+    <div class="section-header">
+      <span class="eyebrow">FAQ</span>
+      <h2 id="faq-title">Questions <span class="text-orange">Fréquentes</span></h2>
+      <div class="accent-line"></div>
+    </div>
+
+    <div class="reveal">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+          Dans quel délai recevrai-je mon devis ?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq1" class="faq-answer" role="region">
+          <p>Nous nous engageons à vous fournir un devis détaillé sous <strong>48 heures ouvrées</strong> après réception de votre demande. Pour les projets complexes nécessitant une visite de site, un délai supplémentaire peut être nécessaire. Nous vous tiendrons informé à chaque étape.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+          Intervenez-vous en dehors de Dakar ?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq2" class="faq-answer" role="region">
+          <p>Oui ! Cymalaubat SUARL intervient dans l'ensemble du <strong>territoire sénégalais</strong>. Notre siège est basé à Guédiawaye, Dakar, mais nous avons réalisé des projets dans plusieurs régions du Sénégal. Contactez-nous pour discuter des modalités d'intervention sur votre site.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+          Quels formats de plans acceptez-vous ?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq3" class="faq-answer" role="region">
+          <p>Nous acceptons tous les formats courants : <strong>PDF, DWG (AutoCAD), DXF, ZIP</strong> ainsi que les images (JPG, PNG). La taille maximale par envoi est de <strong>25 Mo</strong>. Pour des fichiers plus volumineux, contactez-nous directement par email ou par téléphone.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+          Proposez-vous des solutions de financement ?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq4" class="faq-answer" role="region">
+          <p>Cymalaubat SUARL peut vous orienter vers des partenaires financiers (banques, institutions de microfinance) adaptés à votre situation. Nous travaillons avec la <strong>Banque BOA</strong> et pouvons vous accompagner dans la constitution de votre dossier de financement de construction.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq5">
+          Fournissez-vous une garantie sur vos travaux ?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq5" class="faq-answer" role="region">
+          <p>Oui. Conformément à la réglementation sénégalaise et aux usages du secteur BTP, nous offrons une <strong>garantie décennale</strong> sur les éléments structurels et une <strong>garantie de parfait achèvement</strong> sur l'ensemble des travaux. Les détails sont précisés dans chaque contrat.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="assets/logo.svg" alt="" class="footer__logo-icon" width="48" height="48"/>
+          <div><div class="footer__logo-name">CYMALAUBAT SUARL</div><div class="footer__logo-sub">Cyprien Manda Laurent Bâtiment</div></div>
+        </div>
+        <p>Entreprise de BTP et Génie Civil basée à Dakar, Sénégal. Fondée en 2004.</p>
+      </div>
+      <nav aria-label="Footer"><h3 class="footer__col-title">Navigation</h3>
+        <ul class="footer__links">
+          <li><a href="index.html"        class="footer__link">› Accueil</a></li>
+          <li><a href="a-propos.html"     class="footer__link">› À Propos</a></li>
+          <li><a href="services.html"     class="footer__link">› Services</a></li>
+          <li><a href="realisations.html" class="footer__link">› Réalisations</a></li>
+          <li><a href="carrieres.html"    class="footer__link">› Carrières</a></li>
+          <li><a href="contact.html"      class="footer__link">› Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services"><h3 class="footer__col-title">Services</h3>
+        <ul class="footer__links">
+          <li><a href="services.html#gros-oeuvre"   class="footer__link">› Gros Œuvre</a></li>
+          <li><a href="services.html#genie-civil"   class="footer__link">› Génie Civil</a></li>
+          <li><a href="services.html#vrd"           class="footer__link">› VRD & Voirie</a></li>
+          <li><a href="services.html#renovation"    class="footer__link">› Rénovation</a></li>
+          <li><a href="services.html#bureau-etudes" class="footer__link">› Bureau d'Études</a></li>
+        </ul>
+      </nav>
+      <address><h3 class="footer__col-title">Contact Direct</h3>
+        <div class="footer__contact-item"><div class="footer__contact-icon">📍</div><div class="footer__contact-text"><strong>Adresse</strong>27 Wakhinane Guédiawaye, Dakar</div></div>
+        <div class="footer__contact-item"><div class="footer__contact-icon">📞</div><div class="footer__contact-text"><strong>Tél</strong><a href="tel:+221775582150" style="color:var(--color-orange)">77 558 21 50</a> / <a href="tel:+221708353656" style="color:inherit">70 835 36 56</a></div></div>
+        <div class="footer__contact-item"><div class="footer__contact-icon">✉️</div><div class="footer__contact-text"><strong>Email</strong><a href="mailto:cymalaubat@gmail.com" style="color:var(--color-orange)">cymalaubat@gmail.com</a></div></div>
+      </address>
+    </div>
+    <div class="footer__bottom"><p>© 2004–2026 Cymalaubat SUARL — Tous droits réservés.</p></div>
+  </div>
+  <div class="footer__legal-strip">
+    <div class="container">
+      <div class="footer__legal-item"><strong>RCCM :</strong> SN.DKR.2004.240</div>
+      <div class="footer__legal-item"><strong>NINEA :</strong> 002332964</div>
+      <div class="footer__legal-item"><strong>Banque BOA :</strong> 005681310005</div>
+      <div class="footer__legal-item"><strong>Dirigeant :</strong> Jean Cyprien Mendy</div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Retour en haut">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"/></svg>
+</button>
+
+<script src="js/main.js"></script>
+<script src="js/form.js"></script>
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.faq-question').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        document.getElementById(b.getAttribute('aria-controls'))?.classList.remove('open');
+      });
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        document.getElementById(btn.getAttribute('aria-controls'))?.classList.add('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
