@@ -1,0 +1,351 @@
+/* ============================================================
+   CYMALAUBAT SUARL — DESIGN SYSTEM
+   Main CSS: Variables, Reset, Typography, Utilities
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── CSS Custom Properties ─────────────────────────────────── */
+:root {
+  /* Brand Colors */
+  --color-orange:       #E8620A;
+  --color-orange-light: #FF8C42;
+  --color-orange-dark:  #C44F05;
+  --color-orange-glow:  rgba(232, 98, 10, 0.15);
+
+  /* Neutrals */
+  --color-anthracite:   #1C1F24;
+  --color-dark:         #14171B;
+  --color-concrete:     #2E3338;
+  --color-concrete-mid: #3D4349;
+  --color-concrete-light: #4F5560;
+
+  /* Lights */
+  --color-white:        #FFFFFF;
+  --color-off-white:    #F0EDE8;
+  --color-light-gray:   #D5D0C8;
+  --color-mid-gray:     #A8A49C;
+
+  /* Semantic */
+  --color-success:      #3A8C5C;
+  --color-warning:      #F0B429;
+  --color-error:        #E53935;
+
+  /* Typography */
+  --font-heading:       'Oswald', sans-serif;
+  --font-body:          'Inter', sans-serif;
+
+  --text-xs:    0.75rem;   /* 12px */
+  --text-sm:    0.875rem;  /* 14px */
+  --text-base:  1rem;      /* 16px */
+  --text-lg:    1.125rem;  /* 18px */
+  --text-xl:    1.25rem;   /* 20px */
+  --text-2xl:   1.5rem;    /* 24px */
+  --text-3xl:   1.875rem;  /* 30px */
+  --text-4xl:   2.25rem;   /* 36px */
+  --text-5xl:   3rem;      /* 48px */
+  --text-6xl:   3.75rem;   /* 60px */
+  --text-7xl:   4.5rem;    /* 72px */
+
+  /* Spacing */
+  --space-1:   0.25rem;
+  --space-2:   0.5rem;
+  --space-3:   0.75rem;
+  --space-4:   1rem;
+  --space-5:   1.25rem;
+  --space-6:   1.5rem;
+  --space-8:   2rem;
+  --space-10:  2.5rem;
+  --space-12:  3rem;
+  --space-16:  4rem;
+  --space-20:  5rem;
+  --space-24:  6rem;
+  --space-32:  8rem;
+
+  /* Layout */
+  --container-max:   1280px;
+  --container-pad:   clamp(1rem, 5vw, 2rem);
+  --section-pad:     clamp(4rem, 8vw, 8rem);
+
+  /* Borders */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg:   0 8px 32px rgba(0,0,0,0.5);
+  --shadow-xl:   0 16px 48px rgba(0,0,0,0.6);
+  --shadow-orange: 0 8px 32px rgba(232, 98, 10, 0.35);
+
+  /* Transitions */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+  --transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Z-index */
+  --z-nav:     1000;
+  --z-overlay: 1100;
+  --z-modal:   1200;
+  --z-toast:   1300;
+}
+
+/* ── Modern CSS Reset ──────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-anthracite);
+  color: var(--color-off-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol { list-style: none; }
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ── Typography ─────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: var(--color-white);
+}
+
+h1 { font-size: clamp(var(--text-4xl), 7vw, var(--text-7xl)); font-weight: 700; }
+h2 { font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl)); font-weight: 600; }
+h3 { font-size: clamp(var(--text-2xl), 3vw, var(--text-4xl)); font-weight: 600; }
+h4 { font-size: clamp(var(--text-xl),  2vw, var(--text-3xl)); font-weight: 500; }
+h5 { font-size: var(--text-xl); font-weight: 500; }
+h6 { font-size: var(--text-lg); font-weight: 500; }
+
+p {
+  line-height: 1.75;
+  color: var(--color-light-gray);
+}
+
+/* ── Container & Layout ────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.section {
+  padding-block: var(--section-pad);
+}
+
+.section--dark { background: var(--color-dark); }
+.section--concrete { background: var(--color-concrete); }
+.section--anthracite { background: var(--color-anthracite); }
+
+/* ── Grid Utilities ─────────────────────────────────────────── */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: var(--space-8); }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: var(--space-6); }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--space-6); }
+
+/* ── Flex Utilities ─────────────────────────────────────────── */
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-col { display: flex; flex-direction: column; }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+
+/* ── Section Headers ─────────────────────────────────────────── */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.section-header .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  margin-bottom: var(--space-4);
+}
+
+.section-header .eyebrow::before,
+.section-header .eyebrow::after {
+  content: '';
+  width: 30px;
+  height: 2px;
+  background: var(--color-orange);
+  display: inline-block;
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-4);
+}
+
+.section-header p {
+  max-width: 640px;
+  margin-inline: auto;
+  font-size: var(--text-lg);
+}
+
+/* ── Orange Accent Line ─────────────────────────────────────── */
+.accent-line {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-orange), var(--color-orange-light));
+  border-radius: var(--radius-full);
+  margin: var(--space-4) auto;
+}
+
+.accent-line--left { margin-inline: 0; }
+
+/* ── Badges ─────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.badge--orange { background: var(--color-orange); color: var(--color-white); }
+.badge--glass {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--color-off-white);
+}
+.badge--outline-orange {
+  background: transparent;
+  border: 1px solid var(--color-orange);
+  color: var(--color-orange);
+}
+
+/* ── Dividers ────────────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-concrete-mid), transparent);
+  margin-block: var(--space-8);
+}
+
+/* ── Helpers ─────────────────────────────────────────────────── */
+.text-orange { color: var(--color-orange); }
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.mt-4  { margin-top: var(--space-4); }
+.mt-6  { margin-top: var(--space-6); }
+.mt-8  { margin-top: var(--space-8); }
+.mb-4  { margin-bottom: var(--space-4); }
+.mb-6  { margin-bottom: var(--space-6); }
+.mb-8  { margin-bottom: var(--space-8); }
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Page Hero (inner pages) ─────────────────────────────────── */
+.page-hero {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: var(--space-16);
+  overflow: hidden;
+  background: var(--color-dark);
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.3);
+  transform: scale(1.05);
+  transition: transform 6s ease;
+}
+
+.page-hero:hover .page-hero__bg { transform: scale(1); }
+
+.page-hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.page-hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-mid-gray);
+}
+
+.page-hero__breadcrumb a:hover { color: var(--color-orange); }
+.page-hero__breadcrumb .sep { color: var(--color-orange); }
+
+/* ── Responsive Helpers ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop { display: none !important; }
+}
+
+/* ── Scrollbar Custom ────────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-dark); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-concrete-mid);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-orange); }
+
+/* ── Selection ───────────────────────────────────────────────── */
+::selection {
+  background: var(--color-orange);
+  color: var(--color-white);
+}

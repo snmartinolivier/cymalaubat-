@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <!-- Background circle -->
+  <circle cx="40" cy="40" r="38" fill="#1a2a4a" stroke="#2a4a8a" stroke-width="1"/>
+  
+  <!-- Building shapes (CMB logo style) -->
+  <!-- Left tall building -->
+  <rect x="10" y="20" width="12" height="42" rx="1" fill="#1565C0"/>
+  <rect x="12" y="24" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.8"/>
+  <rect x="17" y="24" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.8"/>
+  <rect x="12" y="31" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.8"/>
+  <rect x="17" y="31" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.8"/>
+  <rect x="12" y="38" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.6"/>
+  <rect x="17" y="38" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.6"/>
+  
+  <!-- Center taller building -->
+  <rect x="26" y="12" width="14" height="50" rx="1" fill="#1976D2"/>
+  <rect x="28" y="16" width="4" height="5" rx="0.5" fill="#64B5F6" opacity="0.9"/>
+  <rect x="34" y="16" width="4" height="5" rx="0.5" fill="#64B5F6" opacity="0.9"/>
+  <rect x="28" y="25" width="4" height="5" rx="0.5" fill="#64B5F6" opacity="0.8"/>
+  <rect x="34" y="25" width="4" height="5" rx="0.5" fill="#64B5F6" opacity="0.8"/>
+  <rect x="28" y="34" width="4" height="5" rx="0.5" fill="#64B5F6" opacity="0.7"/>
+  <rect x="34" y="34" width="4" height="5" rx="0.5" fill="#64B5F6" opacity="0.7"/>
+  <rect x="28" y="43" width="4" height="5" rx="0.5" fill="#64B5F6" opacity="0.6"/>
+  <rect x="34" y="43" width="4" height="5" rx="0.5" fill="#64B5F6" opacity="0.6"/>
+  
+  <!-- Right building -->
+  <rect x="44" y="22" width="12" height="40" rx="1" fill="#1565C0"/>
+  <rect x="46" y="26" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.8"/>
+  <rect x="51" y="26" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.8"/>
+  <rect x="46" y="33" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.7"/>
+  <rect x="51" y="33" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.7"/>
+  <rect x="46" y="40" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.6"/>
+  <rect x="51" y="40" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.6"/>
+  
+  <!-- Right short building -->
+  <rect x="58" y="30" width="12" height="32" rx="1" fill="#0D47A1"/>
+  <rect x="60" y="34" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.7"/>
+  <rect x="65" y="34" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.7"/>
+  <rect x="60" y="41" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.6"/>
+  <rect x="65" y="41" width="3" height="4" rx="0.5" fill="#42A5F5" opacity="0.6"/>
+  
+  <!-- Ground line -->
+  <rect x="8" y="62" width="64" height="2" rx="1" fill="#E8620A" opacity="0.8"/>
+  
+  <!-- CMB text at bottom -->
+  <text x="40" y="75" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="9" font-weight="900" fill="#E8620A" letter-spacing="2">CMB</text>
+</svg>
